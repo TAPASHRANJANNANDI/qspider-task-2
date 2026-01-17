@@ -1,0 +1,37 @@
+NAME                                       READY   STATUS    RESTARTS   AGE
+pod/musician-deployment-6dcfd97bbc-655t6   1/1     Running   0          5m1s
+pod/musician-deployment-6dcfd97bbc-bccbh   1/1     Running   0          5m1s
+pod/musician-deployment-6dcfd97bbc-dzgx8   1/1     Running   0          5m1s
+pod/musician-deployment-6dcfd97bbc-fhgdr   1/1     Running   0          5m1s
+pod/musician-deployment-6dcfd97bbc-mmq5z   1/1     Running   0          5m1s
+pod/musician-deployment-6dcfd97bbc-skrqq   1/1     Running   0          5m1s
+pod/musician-deployment-6dcfd97bbc-spcjd   1/1     Running   0          5m1s
+pod/musician-deployment-6dcfd97bbc-w6zf6   1/1     Running   0          5m1s
+pod/musician-deployment-6dcfd97bbc-wn8tv   1/1     Running   0          5m1s
+pod/musician-deployment-6dcfd97bbc-z8jfp   1/1     Running   0          5m1s
+pod/nginx-deployment-bf744486c-8bhjr       1/1     Running   0          59m
+pod/nginx-deployment-bf744486c-chhvq       1/1     Running   0          59m
+pod/nginx-deployment-bf744486c-szpff       1/1     Running   0          59m
+
+NAME                     TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)   AGE
+service/kubernetes       ClusterIP   10.96.0.1      <none>        443/TCP   59m
+service/modern-service   ClusterIP   10.99.40.146   <none>        80/TCP    5m1s
+service/nginx-service    ClusterIP   10.99.15.49    <none>        80/TCP    58m
+
+NAME                                  READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/musician-deployment   10/10   10           10          5m1s
+deployment.apps/nginx-deployment      3/3     3            3           59m
+
+NAME                                             DESIRED   CURRENT   READY   AGE
+replicaset.apps/musician-deployment-6dcfd97bbc   10        10        10      5m1s
+replicaset.apps/nginx-deployment-bf744486c       3         3         3       59m
+
+command : kubectl port-forward service/modern-service 1145:80
+Forwarding from 127.0.0.1:1145 -> 80
+Forwarding from [::1]:1145 -> 80
+Handling connection for 1145
+Handling connection for 1145
+Handling connection for 1145
+Handling connection for 1145
+Handling connection for 1145
+Handling connection for 1145

@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: musician-deployment
+  labels:
+    app: modern-musician
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: modern-musician
+  template:
+    metadata:
+      labels:
+        app: modern-musician  
+    spec:
+      containers:
+      - name: modern-musician
+        image: tapashranjannandi/modern-musician:latest
+        ports:
+        - containerPort: 80
