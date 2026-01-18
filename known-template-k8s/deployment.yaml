@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: known-template-deployment
+  labels:
+    app: known-template
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: known-template
+  template:
+    metadata:
+      labels:
+        app: known-template  
+    spec:
+      containers:
+      - name: known-template
+        image: tapashranjannandi/known-template:latest
+        ports:
+        - containerPort: 80
