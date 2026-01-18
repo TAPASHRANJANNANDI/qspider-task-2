@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: highway-deployment
+  labels:
+    app: highway
+spec:
+  replicas: 8
+  selector:
+    matchLabels:
+      app: highway
+  template:
+    metadata:
+      labels:
+        app: highway  
+    spec:
+      containers:
+      - name: highway
+        image: tapashranjannandi/highway:latest
+        ports:
+        - containerPort: 80
